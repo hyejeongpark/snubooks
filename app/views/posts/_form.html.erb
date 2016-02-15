@@ -1,0 +1,54 @@
+<%= form_for @post, html: {class: "form-signin"} do |f| %>
+  <% if @post.errors.any? %>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.select(:trade_type, [["SELL", 1], ["BUY", 2], ["LEND", 3], ["BORROW", 4]], {}, { :class => 'selectform btn btn-default dropdown-toggle'}) %>
+
+    <%= f.text_field :title, class: "form-control inputbox titlewd", placeholder: "제목" %>
+  <hr class="marginhr">
+  <div class="row1">
+    <div class="part">
+      <%= f.label :author %>
+      <%= f.text_field :author, class: "form-control addformwd", placeholder: "저자" %>
+    </div>
+    <div class="part">
+      <%= f.label :course %>
+      <%= f.text_field :course, class: "form-control addformwd", placeholder: "과목" %>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="part">
+      <%= f.label :edition %>
+      <%= f.text_field :edition, class: "form-control addformwd", placeholder: "판" %>
+    </div>
+    <div class="part">
+      <%= f.label :price %>
+      <%= f.text_field :price, class: "form-control addformwd", placeholder: "가격" %>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="part">
+      <%= f.label :book_condition %>
+      <%= f.text_area :book_condition, class: "form-control conditionwd", placeholder: "상태" %>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="part">
+      <%= f.label :contact %>
+      <%= f.text_field :contact, class: "form-control", placeholder: "연락처" %>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="part">
+      <%= f.label :picture %><br />
+      <%= image_tag @post.picture_url %>
+      <%= f.file_field :picture %>
+    </div>
+  </div>
+  <%= f.submit class: "btn btn-lg btn-primary btn-block login" %>
+  <div class="blank"></div>
+<% end %>

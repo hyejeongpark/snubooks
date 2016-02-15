@@ -1,0 +1,124 @@
+<% unless @title.nil? %>
+  <div class="sitemapbar">
+    <div>
+      <h5><%= @title %></h5>
+    </div>
+  </div>
+<% end %>
+<% if @posts.length == 0 %>
+  <h5>책이 없습니다.</h5>
+<%else %>
+<div class="row content">
+  <% @posts.each_with_index do |post, index| %>
+    <div class="col-md-4">
+    <a class="md" data-toggle="modal" data-target="#myModal<%= index %>">
+      <div class="clickhear">
+        <div class="frame-square">
+          <div class="coverimage crop">
+            <%= image_tag post.picture_url %>
+          </div>
+        </div>
+        <div class="sort">
+          <h4><%= post.trade_type_string %></h4>
+          <div class="date"><%= post.update_time_string %></div>
+        </div>
+        <div class="covercontent">
+          <h4><%= post.title %></h4>
+          <div>
+            <div class="list">저자</div>
+            <div class="listct"><%= post.author %></div>
+            <div style="clear:both;"></div>
+          </div>
+          <div>
+            <div class="list">과목명</div>
+            <div class="listct"><%= post.course %></div>
+            <div style="clear:both;"></div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="modal fade" id="myModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">
+            <%= "#{post.trade_type_string} (#{post.update_time_string})" %>
+          </h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag post.picture_url %>
+        </div>
+        <div class="modal-body">
+          <hr>
+          <div class="modalcontent">
+            <div>
+              <div class="list">책제목</div>
+              <div class="listct"><%= post.title %></div>
+              <div style="clear:both; margin-bottom:8px;"></div>
+            </div>
+            <div>
+              <div class="list">저자</div>
+              <div class="listct"><%= post.author %></div>
+              <div style="clear:both; margin-bottom:8px;"></div>
+            </div>
+            <div>
+              <div class="list">과목명</div>
+              <div class="listct"><%= post.course %></div>
+              <div style="clear:both; margin-bottom:8px;"></div>
+            </div>
+            <div>
+              <div class="list">판</div>
+              <div class="listct"><%= post.edition %></div>
+              <div style="clear:both; margin-bottom:8px;"></div>
+            </div>
+            <div>
+              <div class="list">가격</div>
+              <div class="listct"><%= post.price %></div>
+              <div style="clear:both; margin-bottom:8px;"></div>
+            </div>
+            <div>
+              <div class="list">상태</div>
+              <div class="listct"><%= post.book_condition %></div>
+              <div style="clear:both; margin-bottom:10px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <% if logged_in? %>
+            <button type="button" class="btn btn-primary contactbtn disabled"><%= post.contact %></button>
+          <% else %>
+            <a href="/login">
+              <button type="button" class="btn btn-primary contactbtn" data-container="body" data-toggle="popover" data-placement="right" data-content="로그인 하세요.">
+                로그인을 하면 연락처가 보입니다.
+              </button>
+          </a>
+          <% end %>
+          <% if logged_in? %>
+            <% if current_user == post.user %>
+              <div class="editpart">
+                <a class="editbtn" href="<%= edit_post_path(post) %>">Edit</a>
+                <%= link_to("Delete", post, :method => :delete, :class => "editbtn",
+                            :data => {:confirm => "Are you sure? This action is irreversible."}) %>
+                <div style="clear:both;"></div>
+              </div>
+            <% else %>
+              <% if fav = Favorite.find_by(:user_id => current_user.id, :post_id => post.id) %>
+                <%= link_to('찜 취소', fav, :method => :delete, :class => 'btn btn-keep-r') %>
+              <% else %>
+                <%= form_for :favorite, :url => favorites_path, :method => :post do |f| %>
+                  <input name="favorite[post_id]" id="favorite_post_id" type="hidden" value="<%= post.id %>"></input>
+                  <%= f.submit "찜 하기", :class => 'btn btn-keep' %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+<% end %>

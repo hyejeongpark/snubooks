@@ -1,0 +1,615 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+	font-family: Helvetica, sans-serif;
+	padding-top: 50px;
+	background-color: #eee;
+}
+
+.navbar-inverse {
+	background-color: white;
+	border-color: #bbb;
+}
+
+.navbar-brand {
+	height: 32px;
+	padding: 8px 26px 3px 15px;
+	margin: 19px 0;
+	font-size: 28px;
+	font-weight: 900;
+}
+
+.btn-default {
+	border-color: white;
+}
+
+.navbar-form {
+	padding-top: 10px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: black;
+}
+
+.search {
+	background-color: white;
+	text-align: left;
+}
+
+.blank {
+	margin-top: 70px;
+}
+
+.dropdown {
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.input-group {
+	margin-bottom: 10px;
+}
+
+input[type=checkbox] {
+	display: inline-block;
+}
+
+.check {
+	margin-left: -3px;
+}
+
+.checkbox+.checkbox {
+	margin-left: 10px;
+}
+
+.content {
+	color: #33CCCC;
+}
+
+#footer {
+	background-color: #888;
+	padding: 30px 0;
+	width: 100%;
+}
+
+#footer > p {
+	width: 970px;
+	margin: auto;
+	color: white;
+	font-size: 14px;
+	color: #ddd;
+	padding-left: 15px;
+}
+
+.covercontent {
+	border: 1px solid #888;
+	border-top:none;
+	padding: 5px 15px;
+	border-radius: 0 0 5px 5px;
+	background-color: white;
+	height: 130px;
+}
+
+.covercontent:hover {
+	background-color: #F2FFFF;
+}
+
+.frame-square {
+	vertical-align: top;
+	height: 200px;
+}
+
+.crop {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	border-radius: 5px 5px 0 0;
+	border: 1px solid #888;
+	border-bottom: none;
+} 
+
+.crop img {
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 300px;
+	max-width: 300px;
+	width: auto;
+	height: auto;
+	margin: auto;
+	position: absolute;
+	top: -100%;
+	right: -100%;
+	bottom: -100%;
+	left: -100%;
+}
+
+.crop img{
+	opacity: 1;
+}
+
+.crop img:hover{
+	opacity: 0.7;
+}
+
+h4 {
+	font-size: 17px;
+	margin-top: 15px;
+}
+
+.col-md-4 {
+	margin-bottom: 50px;
+}
+
+.sort {
+	background-color: #33CCCC;
+	border: 1px solid #888;
+	border-bottom: none;
+	border-top: none;
+}
+
+.sort h4 {
+	margin: 0;
+	padding: 8px 20px 5px 15px;
+	color: white;
+	display: inline-block;
+}
+
+ul {
+	padding-left: 1px;
+	list-style-type: none;
+	color: #888;
+	text-align: left;
+}
+
+.date {
+	display: inline-block;
+	color: #E2FFFF;
+	padding: 7px 0 0 0;
+	float: right;
+	margin-right: 15px;
+}
+
+.btn-primary {
+	float: right;
+	background-color: #33CCCC;
+	border: none;
+	margin-top: 18px;
+}
+
+.md {
+	color:#33CCCC;
+}
+
+.md:hover {
+	color: #33CCCC;
+	text-decoration: none;
+}
+
+.modal-body {
+	background-color: #eee;
+}
+
+.modal-body ul {
+	list-style-type: circle;
+	margin:	0 30px 0 15px;
+	padding-left: 20px;
+}
+
+.modal-body li {
+	margin-bottom: 4px;
+}
+
+hr {
+	margin-top: -15px;
+	border-color: #bbb;
+}
+
+.selectbox {
+	width: 18%;
+	display: inline-block;
+}
+
+.inputbox {
+	width: 55%;
+	display: inline-block;
+	margin-left: 8px;
+}
+
+.selectinput {
+	margin-top: 10px;
+}
+
+.selectinput > .btn-default {
+	margin-left: 8px;
+	border-color: #ccc;
+}
+
+.navbar-brand:hover {
+	color: #888!important;
+}
+
+.modal-body img {
+	padding: 20px;
+	max-width: 567px;
+}
+
+.searchbtn {
+	display: inline;
+}
+
+.searchbtn img {
+	height:32px;
+	margin-left: 7px;
+}
+
+.searchbtn img:hover {
+	opacity: 0.8
+}
+
+.search .btn-primary:hover{
+	background-color: white;
+	color: #33cccc;
+}
+
+.search .btn-primary{
+	background-color: #33cccc;
+	color: white;
+	font-weight: 700;
+	font-size: 16px;
+	padding-top: 7px;
+	padding-bottom: 4px;
+	float: left;
+}
+
+.modal-footer p {
+	color: #33cccc;
+	font-size: 18px;
+	padding-top: 4px;
+	float: left;
+	display: inline;
+	margin-left: 15px;
+	margin-bottom: 0px;
+}
+
+.modal-footer button {
+	display: inline;
+}
+
+.modal-footer .btn-primary:hover {
+	background-color: white;
+	color: #33cccc;
+}
+
+.modal-footer .btn-primary {
+	margin-top: 0;
+	border-color: white;
+	color: #33CCCC;
+	background-color: white;
+	float: left;
+	margin-left: 7px;
+	font-weight: 700;
+}
+
+.modal-header {
+	padding-left: 25px;
+	background-color: #33cccc;
+	border-radius: 5px 5px 0 0;
+	text-align: left;
+}
+
+.modal-header h4{
+	font-size: 20px;
+	color: white;
+	margin-bottom: -5px;
+}
+
+.modal-footer {
+	color: black;
+}
+
+.container {
+	width: 980px;
+	text-align: center;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	min-height: 90%;
+}
+
+.form-signin {
+	width: 400px;
+}
+
+.login:hover {
+	color: white;
+	background-color: #33dddd;
+}
+
+.forgot {
+	float: right;
+}
+
+.signup {
+	float: right;
+	margin-top: -17px;
+	margin-left: 10px;
+}
+
+.signup1 {
+	margin-right: 115px;
+}
+
+.btn-add {
+	color: #33cccc;
+	font-weight: 700;
+}
+
+.btn-add:hover {
+	color: #33cccc;
+	background-color: white;
+	border: 1px solid #33cccc;
+}
+
+.h4title {
+	margin-top: 40px;
+}
+
+.marginhr {
+	margin-top: 20px;
+}
+
+.h5title {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+textarea {
+	height: 200px!important;
+	width: 500px;
+	border: 1px solid #ccc;
+}
+
+.disableinput {
+	background-color: white;
+	height: 34px;
+	padding: 7px 12px;
+	border-radius: 3px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+}
+
+.part {
+	float: left;
+	margin-right: 20px;
+	margin-top: 7px;
+}
+
+.row1 {
+	clear: both;
+}
+
+.editbtn {
+	border: 1px solid #bbb;
+	border-radius: 4px; 
+	padding: 8px 14px;
+	background-color: white;
+	margin-right: 5px;
+}
+
+.editbtn:hover {
+	text-decoration: none;
+}
+
+.editpart {
+	margin-top: 7px;
+}
+
+.btn-keep {
+	background-color: white;
+	color: #bbb;
+	margin-right: 10px;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.btn-keep:hover{
+	background-color: white;
+	color: #ff3399;
+}
+
+.btn-keep:active{
+	background-color: white;
+	color: #ff3399;
+}
+
+.btn-keep:visited{
+	background-color: white;
+	color: #ff3399;
+
+}
+
+.btn-keep-r {
+	background-color: white;
+	color: #ff3399;
+	margin-right: 10px;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.btn-keep-r:hover{
+	background-color: white;
+	color: #bbb;
+}
+
+.btn-keep-r:active{
+	background-color: white;
+	color: #bbb;
+}
+
+.btn-keep-r:visited{
+	background-color: white;
+	color: #bbb;
+
+}
+
+.active {
+	background-color: white;
+	color: #ff3399;
+	box-shadow: none!important;
+}
+
+.sitemapbar {
+	height: 50px;
+	margin-top: -50px;
+	margin-bottom: 25px;
+}
+
+.sitemapbar > div {
+	padding-top: 15px;
+}
+
+.sitemapbar h5 {
+	font-size: 23px;
+	border-left: 12px solid;
+	padding-left: 15px;
+	color: gray;
+	text-align: left;
+}
+
+.keyword {
+	color: black;
+	font-weight: 700;
+}
+
+.list {
+	float: left;
+	color: #666;
+	font-weight: 500;
+	width: 50px;
+	font-weight: 700;
+	text-align: left;
+}
+
+.listct {
+	float: left;
+	color: #666;
+	margin-left: 5px;
+}
+
+.modalcontent {
+	padding-left: 20px;
+}
+
+.contactbtn {
+	border: 1px solid;
+}
+
+.contactbtn:hover {
+	border: 1px solid #33cccc;
+}
+
+.fw600 {
+	font-weight: 600;
+	text-align: left;
+}
+
+.disabled {
+	background-color: #33cccc;
+	border-color: #33cccc;
+}
+
+.selectform {
+	height: 34px;
+	border-color: #ccc;
+}
+
+.titlewd {
+	width: 290px;
+}
+
+.addformwd {
+	width: 180px;
+}
+
+.conditionwd {
+	width: 400px;
+}
+
+.clickhear {
+	width: 296px;
+	text-align: left;
+}
+
+.col-md-4 {
+	width: inherit;
+}
+
+.imgfixed {
+	position: absolute;
+	margin-left: 10px;
+}
+
+.pagination li>a, .pagination>li>span {
+	color: #33cccc;
+}
+
+.pagination>.active>span {
+	background-color: #33CCCC;
+	border-color: #33cccc;
+}
+
+h2 {
+	text-align: left;
+}
+
+.part {
+	text-align: left;
+}
+
+h5 {
+	text-align: left;
+}
+
+input[type=submit].btn-block {
+	margin-bottom: 35px;
+}
+
+.emailfield {
+	text-align: left;
+}
+
+.checkbox label {
+	margin-left: -171px;
+}
+
+p {
+	text-align: left;
+}
+
+.field_with_errors {
+	display: inline-block;
+}

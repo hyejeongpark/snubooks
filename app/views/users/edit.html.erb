@@ -1,0 +1,18 @@
+<form class="form-signin">
+  <h2>Edit account</h2>
+  <hr class="marginhr">
+
+<div class="field">
+    <h5 class="h5title">Change password</h5>
+    <%= password_field_tag :password, nil, class: "form-control", :placeholder => 'New password' %>
+  </div>
+  <div class="field">
+    <%= password_field_tag :password, nil, class: "form-control", :placeholder => 'Confirm new password' %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Change password", class: "btn btn-lg btn-primary btn-block login" %>
+  </div>
+<%= link_to("Delete", @user, :method => :delete,
+            :data => {:confirm => "Are you sure? This action is irreversible."}, class: "signup signup1") %>
+  <p class="signup">Want to delete account?</p>
+</form>
